@@ -25,7 +25,7 @@ font-size:28px;
 cursor:pointer;
 }
 
-/* MENU PEQUEÑO */
+/* MENU */
 #menu{
 position:fixed;
 top:70px;
@@ -50,9 +50,12 @@ margin:10px 0;
 
 /* HERO */
 .hero{
-height:100vh;display:flex;align-items:center;justify-content:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') center/cover;
+background:url('https://i.imgur.com/dQDIfRQ.jpeg') center/cover;
 position:relative;
 }
 
@@ -128,7 +131,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* ===== DEMO BRUTAL ===== */
+/* DEMO */
 .demo-container{
 display:flex;
 flex-wrap:wrap;
@@ -147,6 +150,12 @@ transition: transform 0.2s ease;
 width:320px;
 border-radius:20px;
 box-shadow:0 0 40px rgba(0,200,255,0.3);
+transition:0.3s;
+}
+
+.silla-3d img:hover{
+box-shadow:0 0 60px rgba(56,189,248,0.8);
+transform:scale(1.05);
 }
 
 /* PANEL */
@@ -160,9 +169,7 @@ box-shadow:0 0 20px rgba(0,255,255,0.2);
 text-align:left;
 }
 
-.panel h3{
-margin-bottom:10px;
-}
+.panel h3{margin-bottom:10px;}
 
 .barra{
 width:100%;
@@ -190,7 +197,6 @@ margin-top:10px;
 font-size:14px;
 opacity:0.7;
 }
-/* ===== FIN DEMO ===== */
 
 footer{
 background:#020617;
@@ -222,15 +228,15 @@ margin-top:40px;
 </div>
 </section>
 
-<!-- ===== NUEVA SECCIÓN DEMO ===== -->
 <section id="demo" class="hidden">
-
 <h2>Experiencia Interactiva</h2>
 
 <div class="demo-container">
 
 <div class="silla-3d" id="silla3D">
-<img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344"></div>
+<img src="https://i.imgur.com/dQDIfRQ.jpeg">
+</div>
+
 <div class="panel">
 <h3>ANÁLISIS EMOCIONAL</h3>
 
@@ -251,9 +257,7 @@ margin-top:40px;
 </div>
 
 </div>
-
 </section>
-<!-- ===== FIN DEMO ===== -->
 
 <section id="info" class="hidden">
 <h2>Información</h2>
@@ -261,26 +265,26 @@ margin-top:40px;
 <div class="cards">
 
 <div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67">
+<img src="https://i.imgur.com/dQDIfRQ.jpeg">
 <h3>Sensores biométricos</h3>
 <div class="extra">
-Integra sensores avanzados capaces de medir ritmo cardíaco, microvariaciones de presión, temperatura corporal y patrones de movimiento.
+Integra sensores avanzados capaces de medir ritmo cardíaco, presión y temperatura corporal.
 </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<img src="https://i.imgur.com/dQDIfRQ.jpeg">
 <h3>Inteligencia Artificial</h3>
 <div class="extra">
-Utiliza modelos que aprenden patrones emocionales y mejoran con el uso.
+Utiliza modelos que aprenden patrones emocionales.
 </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<img src="https://i.imgur.com/dQDIfRQ.jpeg">
 <h3>App conectada</h3>
 <div class="extra">
-Permite monitoreo en tiempo real desde el celular.
+Monitoreo en tiempo real desde el celular.
 </div>
 </div>
 
@@ -324,7 +328,7 @@ Permite monitoreo en tiempo real desde el celular.
 
 <p>📧 contacto@emotionchair.com</p>
 <p>📱 +52 868 536 4891</p>
-<p>📍Alamo Veracru, México</p>
+<p>📍Álamo, Veracruz, México</p>
 
 </section>
 
@@ -347,7 +351,6 @@ let extra = card.querySelector(".extra");
 extra.style.maxHeight = extra.style.maxHeight ? null : extra.scrollHeight + "px";
 }
 
-/* ===== EFECTO 3D ===== */
 const silla = document.getElementById("silla3D");
 
 document.addEventListener("mousemove", (e)=>{
@@ -356,7 +359,6 @@ let x = (window.innerWidth / 2 - e.clientX) / 25;
 let y = (window.innerHeight / 2 - e.clientY) / 25;
 silla.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
-/* ===== FIN EFECTO ===== */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
@@ -368,3 +370,4 @@ document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
